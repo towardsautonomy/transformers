@@ -8,4 +8,13 @@ Transformers have been shown to be a great neural network architecture and works
 
 Original transformers introduced by Vaswani et al. in the paper "Attention Is All You Need", contains an encoder-decoder architecture. Several workstreams however explores an encoder-only or a decoder-only architecture which performs better on specific tasks while costs less memory and time for training. An example of encoder-only architecture is BERT where certain tokens are masked in the input and the network is tasked to predict those missing tokens. Similarly, GPT-n is an example of decoder-only architecture, where, given past n tokens, the network is trained to predict (n+1)th token. For a simple image classification example in consideration here, an encoder-only architecture will work pretty well, however, here I build an encoder-decoder architecture, as well as add support for encoder-only architecture for complete understanding of how to build and train such a system. I train both networks in this notebook and visualize attention layers.
 
-### Launch the [notebook](transformers.ipynb) to give it a spin and get a better understanding of how to build and train such a system.
+### **Launch the [notebook](transformers.ipynb) to give it a spin and get a better understanding of how to build and train such a system.**  
+
+
+Dissecting the model intermediate layers, we find some interesting insights such as what each pixel pays attention to, and what kind of position embedding is automatically learnt by the model.
+
+![](media/self-attention-weights.png)  
+<p align="center"><i> Figure: Self-attention weights from the center pixel to every other pixel in the image.</i></p>
+
+![](media/learnt-position-embedding.png)  
+<p align="center"><i> Figure: Position embedding learnt by the model.</i></p>
